@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inserate – Sliwk & Heuer</title>
+  <link rel="stylesheet" href="apple-style.css">
+  <style>
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin: 1rem auto;
+      max-width: 700px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><a href="sliwk-heuer-start.html" style="text-decoration: none; color: inherit;">Sliwk & Heuer</a></h1>
+  <nav>
+    <a href="sliwk-heuer-start.html">Start</a>
+    <a href="sliwk-heuer-marktanalyse-buttons.html">Marktanalyse</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Inserate durchsuchen</h2>
+  <div class="card" onclick="showDetails(0)">
+    <h3>Bäckerei Müller</h3>
+    <p><strong>Ort:</strong> Bonn<br><strong>Branche:</strong> Handwerk<br><strong>Preis:</strong> 80.000 €</p>
+  </div>
+  <div class="card" onclick="showDetails(1)">
+    <h3>IT-Agentur Codekraft</h3>
+    <p><strong>Ort:</strong> Berlin<br><strong>Branche:</strong> IT / Software<br><strong>Preis:</strong> 200.000 €</p>
+  </div>
+</section>
+
+<!-- Popup -->
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <button class="close-btn" onclick="closePopup()">X</button>
+    <h3 id="firmName"></h3>
+    <p><strong>Ort:</strong> <span id="firmLocation"></span></p>
+    <p><strong>Branche:</strong> <span id="firmIndustry"></span></p>
+    <p><strong>Preis:</strong> <span id="firmPrice"></span></p>
+    <p><strong>Beschreibung:</strong> <span id="firmDescription"></span></p>
+  </div>
+</div>
+
+<script>
+  const firms = [
+    {
+      name: "Bäckerei Müller",
+      location: "Bonn",
+      industry: "Handwerk",
+      price: "80.000 €",
+      description: "Traditionsbäckerei mit treuer Kundschaft und guter Lage."
+    },
+    {
+      name: "IT-Agentur Codekraft",
+      location: "Berlin",
+      industry: "IT / Software",
+      price: "200.000 €",
+      description: "Wachsendes Team, moderne Webprojekte und laufende Kundenverträge."
+    }
+  ];
+
+  function showDetails(index) {
+    const f = firms[index];
+    document.getElementById('firmName').textContent = f.name;
+    document.getElementById('firmLocation').textContent = f.location;
+    document.getElementById('firmIndustry').textContent = f.industry;
+    document.getElementById('firmPrice').textContent = f.price;
+    document.getElementById('firmDescription').textContent = f.description;
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  function closePopup() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
