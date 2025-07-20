@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliwk & Heuer – Startseite</title>
+  <link rel="stylesheet" href="apple-style.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="sliwk-heuer-start.html" style="text-decoration: none; color: inherit;">Sliwk & Heuer</a></h1>
+  <nav>
+    <a href="#" onclick="openPopup('buyPopup')">Firma kaufen</a>
+    <a href="#" onclick="openPopup('sellPopup')">Firma aufgeben</a>
+    <a href="sliwk-heuer-marktanalyse-buttons.html">Marktanalyse</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Finde deine Nachfolge oder übernimm ein Unternehmen</h2>
+  <p style="max-width:600px; margin:1rem auto;">Wir bringen Unternehmer und Nachfolger zusammen – digital, vertraulich und effizient.</p>
+  <button class="btn" onclick="openPopup('buyPopup')">Firma kaufen</button>
+  <button class="btn" onclick="openPopup('sellPopup')">Firma aufgeben</button>
+</section>
+
+<!-- POPUP Kaufen -->
+<div class="overlay" id="buyPopup">
+  <div class="popup-content">
+    <button class="close-btn" onclick="closePopup('buyPopup')">X</button>
+    <h3>Unternehmen kaufen</h3>
+    <form action="sliwk-heuer-inserate-mit-analyse.html" method="get">
+      <input type="text" name="ort" placeholder="Ort (z. B. Berlin)">
+      <input type="text" name="branche" placeholder="Branche (z. B. IT)">
+      <input type="number" name="preis" placeholder="Max. Preis in €">
+      <button type="submit">Inserate anzeigen</button>
+    </form>
+  </div>
+</div>
+
+<!-- POPUP Verkaufen -->
+<div class="overlay" id="sellPopup">
+  <div class="popup-content">
+    <button class="close-btn" onclick="closePopup('sellPopup')">X</button>
+    <h3>Firma aufgeben</h3>
+    <form action="https://formspree.io/f/xwkgywle" method="POST">
+      <input type="text" name="firmenname" placeholder="Name der Firma" required>
+      <input type="text" name="besitzer" placeholder="Aktueller Besitzer" required>
+      <input type="text" name="standort" placeholder="Standort">
+      <input type="text" name="branche" placeholder="Branche">
+      <input type="text" name="preis" placeholder="Preisvorstellung">
+      <textarea name="beschreibung" rows="4" placeholder="Beschreibung des Unternehmens"></textarea>
+      <button type="submit">Absenden</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openPopup(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

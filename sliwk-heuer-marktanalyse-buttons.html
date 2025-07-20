@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Marktanalyse – Sliwk & Heuer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="apple-style.css">
+  <style>
+    .diagram-container {
+      display: none;
+      margin-top: 1rem;
+    }
+    img.diagram {
+      width: 100%;
+      max-width: 800px;
+      margin: 1rem auto;
+      display: block;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><a href="sliwk-heuer-start.html" style="text-decoration: none; color: inherit;">Sliwk & Heuer</a></h1>
+  <nav>
+    <a href="sliwk-heuer-start.html">Start</a>
+    <a href="sliwk-heuer-inserate-apple.html">Firma kaufen</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Marktanalyse nach Branche</h2>
+  <p>Klicke auf eine Branche, um die aktuelle Marktsituation zu sehen:</p>
+  <button class="btn" onclick="toggleDiagram('handwerk')">Handwerk</button>
+  <div class="diagram-container" id="handwerk">
+    <img class="diagram" src="marktsaettigung_handwerk.png" alt="Handwerk Diagramm">
+  </div>
+
+  <button class="btn" onclick="toggleDiagram('einzelhandel')">Einzelhandel</button>
+  <div class="diagram-container" id="einzelhandel">
+    <img class="diagram" src="marktsaettigung_einzelhandel.png" alt="Einzelhandel Diagramm">
+  </div>
+
+  <button class="btn" onclick="toggleDiagram('it')">IT / Software</button>
+  <div class="diagram-container" id="it">
+    <img class="diagram" src="marktsaettigung_it_software.png" alt="IT Diagramm">
+  </div>
+
+  <button class="btn" onclick="toggleDiagram('dienstleistung')">Dienstleistungen</button>
+  <div class="diagram-container" id="dienstleistung">
+    <img class="diagram" src="marktsaettigung_dienstleistungen.png" alt="Dienstleistung Diagramm">
+  </div>
+
+  <button class="btn" onclick="toggleDiagram('gastronomie')">Gastronomie</button>
+  <div class="diagram-container" id="gastronomie">
+    <img class="diagram" src="marktsaettigung_gastronomie.png" alt="Gastronomie Diagramm">
+  </div>
+</section>
+
+<script>
+  function toggleDiagram(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>

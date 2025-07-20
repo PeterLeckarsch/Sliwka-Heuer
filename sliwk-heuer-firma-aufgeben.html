@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Firma aufgeben – Sliwk & Heuer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="apple-style.css">
+  <style>
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    form button {
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #005bb5;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><a href="sliwk-heuer-start.html" style="text-decoration: none; color: inherit;">Sliwk & Heuer</a></h1>
+  <nav>
+    <a href="sliwk-heuer-start.html">Start</a>
+    <a href="sliwk-heuer-inserate-final.html">Inserate</a>
+    <a href="sliwk-heuer-marktanalyse-buttons.html">Marktanalyse</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Unternehmen zum Verkauf anbieten</h2>
+  <p style="text-align:center; max-width:500px; margin:0 auto;">Fülle das Formular aus, um dein Unternehmen potenziellen Nachfolgern vorzustellen. Wir melden uns vertraulich bei dir.</p>
+
+  <form action="https://formspree.io/f/xwkgywle" method="POST">
+    <input type="text" name="firmenname" placeholder="Name der Firma" required>
+    <input type="text" name="besitzer" placeholder="Aktueller Besitzer" required>
+    <input type="text" name="standort" placeholder="Standort (z. B. Köln)" required>
+    <input type="text" name="branche" placeholder="Branche (z. B. Einzelhandel)" required>
+    <input type="text" name="preis" placeholder="Preisvorstellung (€)">
+    <textarea name="beschreibung" rows="5" placeholder="Beschreibung des Unternehmens"></textarea>
+    <button type="submit">Absenden</button>
+  </form>
+</section>
+
+</body>
+</html>
